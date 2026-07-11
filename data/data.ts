@@ -453,7 +453,7 @@ pnpm dev`,
 
     role: "Full-Stack Developer (Solo Project)",
 
-    duration: "3 weeks",
+    duration: "2 weeks",
 
     features: [
       "JWT authentication with HTTP-only cookies",
