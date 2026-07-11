@@ -418,6 +418,171 @@ pnpm dev`,
       ],
     },
   },
+  {
+    id: "04",
+
+    title: "ProShop E-Commerce Platform",
+
+    desc: "A full-stack e-commerce web application built with React and Golang Fiber, featuring JWT authentication, product catalog browsing, shopping cart management, multi-step checkout, address handling, and order tracking.",
+
+    image: "/proshop-app/home.png",
+
+    tools: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "React Hook Form",
+      "Zod",
+      "Golang",
+      "Fiber",
+      "PostgreSQL",
+      "GORM",
+      "JWT",
+    ],
+
+    liveUrl: "",
+    haveLive: false,
+
+    githubUrl: "https://github.com/reppo-dev/proshop.git",
+
+    overview:
+      "ProShop is a full-stack e-commerce web application designed to simulate a real-world online store experience. The project includes customer-facing features such as product browsing, detailed product pages with ratings, shopping cart management, user authentication, and a complete checkout flow with shipping, payment selection, and order confirmation.",
+
+    role: "Full-Stack Developer (Solo Project)",
+
+    duration: "3 weeks",
+
+    features: [
+      "JWT authentication with HTTP-only cookies",
+      "User registration and login",
+      "Product catalog with ratings and pricing",
+      "Product detail pages with quantity selection",
+      "Shopping cart management (add, update, remove)",
+      "Multi-step checkout flow (Shipping → Payment → Place Order)",
+      "Shipping address management",
+      "Payment method selection",
+      "Order creation and confirmation",
+      "Order details view with shipping and payment info",
+      "Protected routes for checkout pages",
+      "Schema validation using Zod",
+      "Toast notifications with Sonner",
+    ],
+
+    screenshots: [
+      {
+        src: "/proshop-app/home.png",
+        alt: "Home page — product listing",
+      },
+      {
+        src: "/proshop-app/detail-product.png",
+        alt: "Product details page",
+      },
+      {
+        src: "/proshop-app/card.png",
+        alt: "Shopping cart page",
+      },
+      {
+        src: "/proshop-app/login.png",
+        alt: "Login page",
+      },
+      {
+        src: "/proshop-app/register.png",
+        alt: "Register page",
+      },
+      {
+        src: "/proshop-app/shipping.png",
+        alt: "Shipping address page",
+      },
+      {
+        src: "/proshop-app/place-order.png",
+        alt: "Place order page",
+      },
+      {
+        src: "/proshop-app/order.png",
+        alt: "Order details page",
+      },
+    ],
+
+    techStack: [
+      {
+        category: "Frontend",
+        items: [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Redux Toolkit",
+          "RTK Query",
+          "React Router",
+          "Tailwind CSS",
+          "Shadcn UI",
+          "React Hook Form",
+          "Zod",
+        ],
+      },
+      {
+        category: "Backend",
+        items: ["Golang", "Fiber", "GORM", "JWT"],
+      },
+      {
+        category: "Database",
+        items: ["PostgreSQL"],
+      },
+    ],
+
+    structure: [
+      {
+        path: "frontend/src/screens/",
+        description: "Page components (Home, Product, Cart, Checkout, Orders)",
+      },
+      {
+        path: "frontend/src/components/",
+        description:
+          "Reusable UI components (Header, ProductCard, CheckoutSteps)",
+      },
+      {
+        path: "frontend/src/redux/",
+        description: "Redux store, slices, and RTK Query API integration",
+      },
+      {
+        path: "backend/controller/",
+        description:
+          "Fiber request handlers (auth, products, cart, orders, address)",
+      },
+      {
+        path: "backend/models/",
+        description: "GORM database models",
+      },
+      {
+        path: "backend/router/",
+        description: "API route definitions",
+      },
+      {
+        path: "backend/database/",
+        description: "PostgreSQL connection and auto-migrations",
+      },
+      {
+        path: "backend/main.go",
+        description: "Application entry point",
+      },
+    ],
+
+    setup: {
+      backend: `cd backend
+go mod download
+go run main.go`,
+
+      frontend: `cd frontend
+pnpm install
+pnpm dev`,
+
+      env: [
+        "dns=host=localhost user=postgres password=yourpassword dbname=proshop port=5432 sslmode=disable",
+      ],
+    },
+  },
 ];
 
 export const aboutItems = [
