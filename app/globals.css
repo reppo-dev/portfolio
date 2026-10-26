@@ -48,6 +48,7 @@
 
 :root {
   --radius: 0.625rem;
+  --button-shadow: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -82,6 +83,7 @@
 }
 
 .dark {
+  --button-shadow: rgb(0 0 0 / 70%);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -129,7 +131,7 @@
     @apply px-5 sm:px-[4vw] md:px-[6vw] mx-auto lg:max-w-[65vw] xl:max-w-[70vw] w-full;
   }
   .btn {
-    box-shadow: 3px 3px 0 0 currentColor;
+    box-shadow: 3px 3px 0 0 var(--button-shadow);
     @apply flex border border-border bg-background px-6 py-3 text-foreground transition hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
   .btn:is(:hover, :focus) {

@@ -34,10 +34,11 @@ const Hero = () => {
       <div className="container flex flex-col items-center">
         <div className="size-24 bg-black flex rounded-full overflow-hidden">
           <Image
-            src="/images/img.jpg"
-            alt="my photo"
+            src="/images/github-profile.jpg"
+            alt="Mohammad Amin's profile photo"
             width={160}
             height={160}
+            className="size-full object-cover"
           />
         </div>
         <div className="text-center mt-4 space-y-4">
