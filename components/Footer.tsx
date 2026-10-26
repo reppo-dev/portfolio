@@ -3,12 +3,12 @@
 import { RiFileCopyLine } from "react-icons/ri";
 import CustomLink from "./CustomLink";
 
+const email = "m.shouridegan@gmail.com";
+const [emailName, emailDomain] = email.split("@");
+
 const Footer = () => {
   const handleCopyEmail = () => {
-    const email = "reppo.dev@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-      setTimeout(() => 2000);
-    });
+    navigator.clipboard.writeText(email);
   };
   return (
     <footer className="border-t border-border bg-muted text-foreground pt-10 pb-10">
@@ -26,11 +26,11 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="flex items-end justify-between">
-          <h4 className="text-4xl sm:text-5xl text-nowrap uppercase font-bold">
-            reppo.dev
+        <div className="flex items-end justify-between gap-4">
+          <h4 className="min-w-0 text-2xl sm:text-5xl uppercase font-bold">
+            {emailName}
             <br />
-            @gmail.com
+            @{emailDomain}
           </h4>
           <button
             onClick={handleCopyEmail}
