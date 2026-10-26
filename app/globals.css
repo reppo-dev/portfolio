@@ -129,10 +129,14 @@
     @apply px-5 sm:px-[4vw] md:px-[6vw] mx-auto lg:max-w-[65vw] xl:max-w-[70vw] w-full;
   }
   .btn {
-    box-shadow: 3px 3px 0 0 black;
-    @apply border px-6 py-3 flex transition;
+    box-shadow: 3px 3px 0 0 currentColor;
+    @apply flex border border-border bg-background px-6 py-3 text-foreground transition hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
   .btn:is(:hover, :focus) {
     @apply translate-0.5;
+  }
+  .outline-text {
+    -webkit-text-stroke: 1px var(--foreground);
+    -webkit-text-fill-color: transparent;
   }
 }

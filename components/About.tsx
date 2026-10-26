@@ -3,7 +3,7 @@ import { aboutItems } from "@/data/data";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 border-t border-neutral-200">
+    <section id="about" className="scroll-mt-20 py-20 border-t border-border">
       <div className="container space-y-14">
         <div className="space-y-3">
           <div className="text-4xl lg:text-7xl font-bold flex items-center">
@@ -17,7 +17,7 @@ const About = () => {
             /> */}
             <span>ut me</span>
           </div>
-          <p className="">
+          <p className="text-muted-foreground">
             Software Engineer specializing in the design and development of
             full-stack applications with React, Next.js, and Go. I focus on
             implementing clean architecture and secure authentication patterns
@@ -26,11 +26,11 @@ const About = () => {
             performance to designing efficient APIs and database schemas.
           </p>
         </div>
-        <div className="border-t border-neutral-300">
+        <div className="border-t border-border">
           {aboutItems.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col sm:flex-row items-center gap-8 border-b border-neutral-300 py-2"
+              className="flex flex-col sm:flex-row items-center gap-8 border-b border-border py-2"
             >
               <div className="size-24 flex items-center justify-center">
                 <Image
@@ -38,7 +38,7 @@ const About = () => {
                   alt={item.title}
                   width={512}
                   height={512}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover dark:invert"
                 />
               </div>
               <div className="">

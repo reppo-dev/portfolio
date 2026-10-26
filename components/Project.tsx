@@ -6,7 +6,7 @@ import { RiGithubFill, RiGlobalLine } from "react-icons/ri";
 const Project = () => {
   return (
     <section id="projects" className="py-20">
-      <div className="container border-t border-neutral-300">
+      <div className="container border-t border-border">
         <div className="flex items-center gap-4 py-4">
           <div className="shrink-0 hidden sm:block">
             <Image
@@ -14,17 +14,12 @@ const Project = () => {
               alt=""
               width={120}
               height={120}
-              className="w-full h-auto object-cover mt-4"
+              className="w-full h-auto object-cover mt-4 dark:invert"
             />
           </div>
-          <h2 className="text-6xl font-bold uppercase mt-4">
+          <h2 className="text-4xl sm:text-6xl font-bold uppercase mt-4">
             Selected{" "}
-            <span
-              style={{
-                WebkitTextStroke: "1px black",
-                WebkitTextFillColor: "white",
-              }}
-            >
+            <span className="outline-text">
               Projects
             </span>
           </h2>
@@ -32,7 +27,7 @@ const Project = () => {
         <div className="grid md:grid-cols-2 gap-7 mt-12">
           {projects.map((project) => (
             <div
-              className="px-2 py-2 border-0 rounded-lg border-neutral-900 overflow-hidden shadow-xl max-w-160 mx-auto"
+              className="w-full min-w-0 px-2 py-2 border border-border bg-card text-card-foreground rounded-lg overflow-hidden shadow-xl max-w-160 mx-auto"
               key={project.id}
             >
               <div className="relative bg-neutral-900/90 rounded-lg overflow-hidden aspect-video">
@@ -46,10 +41,10 @@ const Project = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-neutral-950/10" />
               </div>
               <div className="p-2">
-                <h3 className="text-2xl font-bold">
+                  <h3 className="text-2xl font-bold break-words">
                   <Link href={`/projects/${project.id}`}>{project.title}</Link>
                 </h3>
-                <p>{project.desc}</p>
+                <p className="mt-2 text-muted-foreground">{project.desc}</p>
               </div>
 
               <div className="flex flex-wrap items-center justify-between py-4 gap-5">
@@ -57,6 +52,8 @@ const Project = () => {
                   {project.haveLive == true && (
                     <Link
                       href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn flex items-center gap-2 font-semibold"
                     >
                       <span className="flex items-center justify-center gap-2">
@@ -68,6 +65,7 @@ const Project = () => {
                   <Link
                     href={project.githubUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="btn flex items-center gap-2 font-semibold"
                   >
                     <span className="flex items-center justify-center gap-2">
@@ -80,7 +78,7 @@ const Project = () => {
                   {project.tools.map((tool) => (
                     <p
                       key={tool}
-                      className="border px-3 bg-gray-300 rounded-full"
+                      className="border border-border px-3 bg-muted text-muted-foreground rounded-full text-sm"
                     >
                       {tool}
                     </p>

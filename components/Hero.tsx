@@ -41,20 +41,15 @@ const Hero = () => {
           />
         </div>
         <div className="text-center mt-4 space-y-4">
-          <h1 className="font-extrabold text-4xl lg:text-6xl uppercase w-full h-full text-neutral-900/90">
+          <h1 className="font-extrabold text-4xl lg:text-6xl uppercase w-full h-full text-foreground">
             Mohammad Amin a <br />{" "}
-            <span
-              style={{
-                WebkitTextStroke: "1px #171717",
-                WebkitTextFillColor: "white",
-              }}
-            >
+            <span className="outline-text">
               {" "}
               Fullstack
             </span>{" "}
             developer.
           </h1>
-          <p className="hero-text mx-auto text-neutral-600">
+          <p className="hero-text mx-auto text-muted-foreground">
             I build complete web applications from idea to deployment.
             Specializing in React, Next.js, and Go, I create scalable systems
             with clean architecture and seamless user experiences.

@@ -33,6 +33,38 @@ export interface ProjectDetail {
 
 export const projects: ProjectDetail[] = [
   {
+    id: "05",
+    title: "Chat App - Social & Messaging",
+    desc: "A Next.js and Go app with social posts, real-time messaging, and notifications. Developed with AI assistance while learning WebSockets.",
+    image: "/chat-app/home.png",
+    tools: ["Next.js", "TypeScript", "Go", "Gin", "PostgreSQL", "WebSocket"],
+    liveUrl: "https://chat-app-nine-delta-36.vercel.app",
+    haveLive: true,
+    githubUrl: "https://github.com/reppo-dev/chat-app",
+    overview:
+      "A personal learning project built with Next.js and Go, covering social posts, conversations, and live notifications. I developed the app with AI assistance while learning WebSockets and connecting the frontend to a PostgreSQL-backed API.",
+    role: "Personal project with AI-assisted development",
+    duration: "2026",
+    features: [
+      "Email registration and login",
+      "Social posts, comments, and reactions",
+      "Direct and group conversations",
+      "Live message updates and online presence with WebSockets",
+      "Notifications for messages and social activity",
+    ],
+    screenshots: [
+      { src: "/chat-app/home.png", alt: "Chat App social feed" },
+      { src: "/chat-app/conversation.png", alt: "Starting a new conversation" },
+    ],
+    techStack: [
+      { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+      { category: "Backend", items: ["Go", "Gin", "WebSocket"] },
+      { category: "Database", items: ["PostgreSQL", "sqlc"] },
+    ],
+    structure: [],
+    setup: {},
+  },
+  {
     id: "01",
     title: "Full-Stack App: React + Golang Fiber",
     desc: "A modern full-stack web application with React (TypeScript) frontend and Golang (Fiber) backend , Features JWT authentication.",

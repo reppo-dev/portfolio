@@ -1,34 +1,33 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 
+const subscribe = () => () => {};
+
 const ThemeToggler = () => {
-  const [mounted, setMounted] = useState(false);
-
-  const { theme, setTheme, systemTheme } = useTheme();
-
-  useEffect(() => {
-    const mountedCheck = () => {
-      setMounted(true);
-    };
-    mountedCheck();
-  }, []);
-
-  if (!mounted) return null;
-
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = mounted && resolvedTheme === "dark";
+  const label = mounted
+    ? `Switch to ${isDark ? "light" : "dark"} mode`
+    : "Toggle color theme";
 
   return (
     <button
-      onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-      className="p-2 transition w-10 h-10 cursor-pointer bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-between"
+      type="button"
+      aria-label={label}
+      aria-pressed={isDark}
+      title={label}
+      disabled={!mounted}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-wait"
     >
-      {currentTheme === "dark" ? (
-        <Sun className=" text-white w-7 h-7 cursor-pointer" />
+      {isDark ? (
+        <Sun className="size-5" aria-hidden="true" />
       ) : (
-        <Moon className=" text-black w-7 h-7 cursor-pointer" />
+        <Moon className="size-5" aria-hidden="true" />
       )}
     </button>
   );

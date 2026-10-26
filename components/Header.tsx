@@ -1,10 +1,14 @@
 import CustomLink from "./CustomLink";
+import ThemeToggler from "./helper/theme.Toggler";
 
 const Header = () => {
   return (
-    <div className="w-full sticky top-0 left-0 z-50 pb-1 pt-2  bg-white/60 backdrop-blur-2xl">
-      <nav className="container flex items-center justify-between gap-8.5 lg:hidden">
-        <div className="flex items-center gap-2 sm:gap-7">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 text-foreground backdrop-blur-2xl">
+      <nav
+        aria-label="Main navigation"
+        className="container relative flex items-center justify-between gap-4 py-3 lg:justify-center"
+      >
+        <div className="flex items-center gap-5 sm:gap-7">
           <CustomLink
             href="/projects"
             label="Projects"
@@ -12,26 +16,16 @@ const Header = () => {
           />
 
           <CustomLink
-            href="#about"
-            label="about"
+            href="/#about"
+            label="About"
             className="uppercase font-semibold"
           />
         </div>
+        <div className="lg:absolute lg:right-5">
+          <ThemeToggler />
+        </div>
       </nav>
-
-      <nav className="container lg:flex  items-center justify-center gap-8 hidden">
-        <CustomLink
-          href="projects"
-          label="Projects"
-          className="uppercase font-semibold"
-        />
-        <CustomLink
-          href="#about"
-          label="About"
-          className="uppercase font-semibold"
-        />
-      </nav>
-    </div>
+    </header>
   );
 };
 

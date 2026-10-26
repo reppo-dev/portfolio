@@ -3,6 +3,7 @@ import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Provider from "@/components/hoc/Provider";
 
 const poppins = Poppins({
   weight: ["600", "700", "800", "900"],
@@ -29,11 +30,13 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${spaceGrotesk.className} antialiased`}
       >
-        <Header />
-        <main className="relative  overflow-x-hidden bg-white z-10">
-          {children}
-        </main>
-        <Footer />
+        <Provider>
+          <Header />
+          <main className="relative z-10 min-h-screen overflow-x-hidden bg-background text-foreground">
+            {children}
+          </main>
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

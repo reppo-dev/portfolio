@@ -11,7 +11,7 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="bg-neutral-950 text-white pt-10 pb-10">
+    <footer className="border-t border-border bg-muted text-foreground pt-10 pb-10">
       <div className="container space-y-9 flex flex-col justify-center h-full">
         <div className="flex items-center justify-between">
           <div className="flex gap-3">
@@ -34,12 +34,13 @@ const Footer = () => {
           </h4>
           <button
             onClick={handleCopyEmail}
-            className="border flex items-center gap-0.5 py-1.5 px-3.5 rounded-full hover:bg-white hover:text-neutral-900 focus:bg-white focus:text-neutral-900 transition-colors font-semibold"
+            aria-label="Copy email address"
+            className="border border-border flex items-center gap-0.5 py-1.5 px-3.5 rounded-full hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-ring transition-colors font-semibold"
           >
             <RiFileCopyLine />
           </button>
         </div>
-        <p className="border-t border-neutral-900 pt-1.5 mt-auto">
+        <p className="border-t border-border pt-1.5 mt-auto">
           &copy; {new Date().getFullYear()} All Rights Reserved.
         </p>
       </div>
